@@ -24,7 +24,7 @@ object Form1: TForm1
     object Label1: TLabel
       Left = 8
       Top = 11
-      Width = 49
+      Width = 44
       Height = 18
       Caption = 'Search'
       Font.Charset = DEFAULT_CHARSET
@@ -41,12 +41,38 @@ object Form1: TForm1
     Width = 857
     Height = 401
     Align = alClient
+    DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = #1060#1072#1084#1080#1083#1080#1103
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1048#1084#1103
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1054#1090#1095#1077#1089#1090#1074#1086
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1058#1077#1083#1077#1092#1086#1085
+        Width = 100
+        Visible = True
+      end>
   end
   object Edit2: TEdit
     Left = 63
@@ -69,12 +95,15 @@ object Form1: TForm1
       Caption = 'Edit'
       object Add1: TMenuItem
         Caption = 'Add'
+        OnClick = Add1Click
       end
       object ransform1: TMenuItem
         Caption = 'Transform'
+        OnClick = ransform1Click
       end
       object Delete1: TMenuItem
         Caption = 'Delete'
+        OnClick = Delete1Click
       end
     end
     object Help1: TMenuItem
@@ -85,15 +114,36 @@ object Form1: TForm1
     end
   end
   object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
+      'ers\'#1044#1084#1080#1090#1088#1080#1081'\Desktop\Delphi bd\Win32\Debug\directory.mdb;Mode=Sha' +
+      're Deny None;Persist Security Info=False;Jet OLEDB:System databa' +
+      'se="";Jet OLEDB:Registry Path="";Jet OLEDB:Database Password="";' +
+      'Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet OL' +
+      'EDB:Global Partial Bulk Ops=2;Jet OLEDB:Global Bulk Transactions' +
+      '=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System Da' +
+      'tabase=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don'#39't Co' +
+      'py Locale on Compact=False;Jet OLEDB:Compact Without Replica Rep' +
+      'air=False;Jet OLEDB:SFP=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 104
     Top = 400
   end
   object DataSource1: TDataSource
+    DataSet = ADOQuery1
     Left = 200
     Top = 400
   end
   object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
     Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM '#1060#1048#1054)
     Left = 328
     Top = 400
   end

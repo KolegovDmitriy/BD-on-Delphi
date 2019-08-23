@@ -26,6 +26,9 @@ type
     Edit2: TEdit;
     Label1: TLabel;
     procedure Close1Click(Sender: TObject);
+    procedure ransform1Click(Sender: TObject);
+    procedure Add1Click(Sender: TObject);
+    procedure Delete1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,9 +42,27 @@ implementation
 
 {$R *.dfm}
 
+uses Transform, Unit3;
+
+procedure TForm1.Add1Click(Sender: TObject);
+begin
+Form1.ADOQuery1.Append;
+Form2.Show;
+end;
+
 procedure TForm1.Close1Click(Sender: TObject);
 begin
 Form1.Close();
+end;
+
+procedure TForm1.Delete1Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm1.ransform1Click(Sender: TObject);
+begin
+  Form2.Show;
 end;
 
 end.
